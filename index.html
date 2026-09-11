@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Newton's Cinnamon Roasted Nuts | Salina, Kansas</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --burgundy:#5b0d0d;
+    --dark:#190b08;
+    --cream:#fff4dc;
+    --gold:#d9a441;
+    --brown:#35170e;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--dark);
+    color:var(--cream);
+}
+
+.topbar{
+    background:#6b1010;
+    color:#fff1d3;
+    text-align:center;
+    padding:10px;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+header{
+    background:#250b08;
+    border-bottom:2px solid var(--gold);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    min-height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 25px;
+    gap:25px;
+}
+
+.brand{
+    font-family:Georgia,serif;
+    color:var(--cream);
+    font-size:28px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.brand span{
+    color:var(--gold);
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+.cart{
+    border:1px solid var(--gold);
+    padding:10px 16px;
+    border-radius:30px;
+}
+
+.hero{
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 75% 45%,rgba(188,112,42,.35),transparent 27%),
+      linear-gradient(90deg,#1d0c08 0%,#3d160d 50%,#160906 100%);
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 82% 45%,rgba(255,190,92,.12),transparent 18%);
+    pointer-events:none;
+}
+
+.hero-inner{
+    width:min(1200px,92%);
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(48px,7vw,90px);
+    max-width:900px;
+    line-height:.98;
+    color:#fff3d6;
+    text-shadow:0 4px 18px #000;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    max-width:620px;
+    margin:25px 0;
+    font-size:20px;
+    line-height:1.6;
+    color:#f1dcc0;
+}
+
+.button{
+    display:inline-block;
+    background:var(--burgundy);
+    color:white;
+    border:2px solid var(--gold);
+    padding:15px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.button:hover{
+    transform:translateY(-2px);
+    background:#7a1515;
+}
+
+.benefits{
+    background:#fff5df;
+    color:#32170f;
+}
+
+.benefits-inner{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.benefit{
+    text-align:center;
+    padding:27px 20px;
+    border-right:1px solid #d9c5a2;
+}
+
+.benefit:last-child{
+    border-right:none;
+}
+
+.benefit strong{
+    display:block;
+    font-family:Georgia,serif;
+    margin-bottom:7px;
+}
+
+.section{
+    padding:75px 25px;
+}
+
+.section-title{
+    text-align:center;
+    font-family:Georgia,serif;
+    color:var(--gold);
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#d9c5aa;
+    margin-bottom:45px;
+}
+
+.products{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.product{
+    background:#fff5e2;
+    color:#30160f;
+    border:2px solid #b88737;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-7px);
+}
+
+.product-image{
+    height:260px;
+    background:
+       radial-gradient(circle,#9c5c2b 0%,#512315 55%,#28100b 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:80px;
+}
+
+.product-info{
+    padding:25px;
+    text-align:center;
+}
+
+.product-info h3{
+    font-family:Georgia,serif;
+    font-size:25px;
+    color:#651010;
+    margin-bottom:10px;
+}
+
+.product-info p{
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.sizes{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:18px;
+}
+
+.size{
+    border:1px solid #7a301e;
+    border-radius:20px;
+    padding:8px 14px;
+    font-weight:bold;
+}
+
+.story{
+    background:#271009;
+    border-top:1px solid #81511f;
+    border-bottom:1px solid #81511f;
+}
+
+.story-inner{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.story h2{
+    font-family:Georgia,serif;
+    color:var(--gold);
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.story p{
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+    color:#f0dcc0;
+}
+
+footer{
+    background:#0d0705;
+    text-align:center;
+    padding:45px 20px;
+    color:#cdbb9d;
+}
+
+footer .footer-logo{
+    font-family:Georgia,serif;
+    font-size:28px;
+    color:var(--gold);
+    margin-bottom:12px;
+}
+
+@media(max-width:800px){
+
+    .nav{
+        flex-direction:column;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    .benefits-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .benefit{
+        border-bottom:1px solid #d9c5a2;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    SMALL BATCH &nbsp; • &nbsp; BIG FLAVOR &nbsp; • &nbsp; SALINA, KANSAS
+</div>
+
+<header>
+<div class="nav">
+
+<a class="brand" href="#">
+    NEWTON'S <span>CINNAMON ROASTED NUTS</span>
+</a>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#story">Our Story</a>
+    <a href="#gifts">Holiday Gifts</a>
+    <a href="#faq">FAQs</a>
+    <a href="#contact">Contact</a>
+    <a class="cart" href="#">Cart (0)</a>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+
+<div class="eyebrow">
+    PREMIUM • SMALL BATCH • HANDCRAFTED
+</div>
+
+<h1>
+    SIMPLE INGREDIENTS.<br>
+    <span>UNFORGETTABLE FLAVOR.</span>
+</h1>
+
+<p>
+    Premium cinnamon roasted nuts made with real ingredients
+    and a whole lot of heart. Sweet, crunchy and roasted in
+    small batches in Salina, Kansas.
+</p>
+
+<a class="button" href="#shop">
+    SHOP NOW →
+</a>
+
+</div>
+</section>
+
+<section class="benefits">
+<div class="benefits-inner">
+
+<div class="benefit">
+<strong>🌿 REAL INGREDIENTS</strong>
+Nuts, water, vanilla extract, cinnamon and sugar
+</div>
+
+<div class="benefit">
+<strong>🤎 SMALL BATCH</strong>
+Quality and flavor you can taste
+</div>
+
+<div class="benefit">
+<strong>🎁 GREAT FOR GIFTS</strong>
+Perfect for holidays and special occasions
+</div>
+
+<div class="benefit">
+<strong>📦 SHIPPED TO YOU</strong>
+Fresh roasted nuts delivered to your door
+</div>
+
+</div>
+</section>
+
+<section class="section" id="shop">
+
+<h2 class="section-title">Our Products</h2>
+
+<p class="section-subtitle">
+Choose your favorite Newton's Cinnamon Roasted Nuts.
+</p>
+
+<div class="products">
+
+<div class="product">
+<div class="product-image">🌰</div>
+
+<div class="product-info">
+<h3>Cinnamon Roasted Almonds</h3>
+
+<p>
+Sweet cinnamon roasted almonds with the perfect crunch.
+</p>
+
+<div class="sizes">
+<span class="size">8 OZ</span>
+<span class="size">16 OZ</span>
+</div>
+
+<a class="button" href="#">SHOP ALMONDS</a>
+</div>
+</div>
+
+
+<div class="product">
+<div class="product-image">🥜</div>
+
+<div class="product-info">
+<h3>Cinnamon Roasted Pecans</h3>
+
+<p>
+Rich pecans coated with our signature cinnamon-sugar flavor.
+</p>
+
+<div class="sizes">
+<span class="size">8 OZ</span>
+<span class="size">16 OZ</span>
+</div>
+
+<a class="button" href="#">SHOP PECANS</a>
+</div>
+</div>
+
+
+<div class="product">
+<div class="product-image">🥜</div>
+
+<div class="product-info">
+<h3>Cinnamon Roasted Cashews</h3>
+
+<p>
+Creamy cashews roasted with cinnamon, sugar and vanilla.
+</p>
+
+<div class="sizes">
+<span class="size">8 OZ</span>
+<span class="size">16 OZ</span>
+</div>
+
+<a class="button" href="#">SHOP CASHEWS</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section story" id="story">
+
+<div class="story-inner">
+
+<h2>From Our Family to Yours</h2>
+
+<p>
+Newton's Cinnamon Roasted Nuts started with a simple idea:
+take high-quality nuts, use simple ingredients and create a
+flavor that brings people together. Based in Salina, Kansas,
+we're building Newton's around great-tasting nuts, thoughtful
+gifts and quality you can be proud to share.
+</p>
+
+</div>
+</section>
+
+<footer id="contact">
+
+<div class="footer-logo">
+Newton's Cinnamon Roasted Nuts
+</div>
+
+<p>
+Sweet Nuts • Stronger Connections
+</p>
+
+<br>
+
+<p>
+Salina, Kansas
+</p>
+
+</footer>
+
+</body>
+</html>
